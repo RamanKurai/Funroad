@@ -18,7 +18,7 @@ const navbarItems = [
 
 const Navbar = () => {
   const pathname = usePathname();
-  const [isSidebarOpen , setIsSidebarOpen] = useState(true)
+  const [isSidebarOpen , setIsSidebarOpen] = useState(false)
   return (
     <nav className="flex justify-between items-center bg-black h-20">
       <div>

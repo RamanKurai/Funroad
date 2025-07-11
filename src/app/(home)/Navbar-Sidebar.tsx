@@ -18,7 +18,7 @@ const NavBarSidebar = ({items , open , onOpenChange} : Props) => {
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
        <SheetContent 
-       side='left'
+       side='top'
        className='p-0 transition-none'
        >
        <SheetHeader className='p-4 border-b'>
@@ -34,10 +34,27 @@ const NavBarSidebar = ({items , open , onOpenChange} : Props) => {
            key={item.href}
            href={item.href}
            className="w-full text-left p-4 hover:bg-black hover:text-white flex items-center text-base font-medium"
+           onClick={()=> onOpenChange(false)}
            >
            {item.children}
            </Link>
          ))}
+        <div className='border-t'>
+        <Link 
+        onClick={()=> onOpenChange(false)}
+        href={"/sign-in"} 
+        className="w-full text-left p-4 hover:bg-black hover:text-white flex items-center text-base font-medium"
+        >
+        Log In
+        </Link>
+        <Link
+        onClick={()=> onOpenChange(false)}
+        href={"/start-selling"} 
+        className="w-full text-left p-4 hover:bg-black hover:text-white flex items-center text-base font-medium"
+        >
+        Start Selling
+        </Link>
+        </div>
        </ScrollArea>
        </SheetContent>
     </Sheet>
