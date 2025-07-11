@@ -1,9 +1,9 @@
-import Navbar from "./navbar";
+import Navbar from "./Navbar";
 
 interface props  {
    children : React.ReactNode;
 }
-const Homelayout = ({children} : props) => {
+const HomePagelayout = ({children} : props) => {
   return (
     <div className="flex flex-col min-h-screen">
         <Navbar/>
@@ -12,4 +12,5 @@ const Homelayout = ({children} : props) => {
   )
 }
 
-export default Homelayout
+export default HomePagelayout
+
