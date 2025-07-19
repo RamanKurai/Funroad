@@ -1,32 +1,19 @@
-import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Input } from "@/components/ui/input";
-import { Progress } from "@/components/ui/progress";
-import { Textarea } from "@/components/ui/textarea";
-import React from "react";
+import configPromise from "@payload-config"
+import { CollectionSlug, getPayload } from "payload";
 
-const Homepage = () => {
-  return (
-    <div className="p-4">
-      <div className="flex flex-col gap-y-4">
-        <div>
-          <Button variant={"elevated"}>Iam a Button</Button>
-        </div>
-        <div>
-          <Input placeholder="Iam an Input" />
-        </div>
-        <div>
-          <Progress value={50} />
-        </div>
-        <div>
-          <Textarea placeholder="Iam a Text Area" />
-        </div>
-        <div>
-          <Checkbox />
-        </div>
-      </div>
+export default async function Homepage () {
+      const payload = await getPayload({
+        config: configPromise,
+      })
+
+      const data = await payload.find({
+          collection: "categories" as CollectionSlug,
+      })
+      
+  return (    
+    <div>
+      {JSON.stringify(data , null , 2)}
     </div>
   );
 };
 
-export default Homepage;

@@ -1,5 +1,5 @@
 import configPromise from '@payload-config'
-import { getPayload, CollectionConfig, CollectionSlug } from 'payload'
+import { getPayload, CollectionSlug } from 'payload'
 
 export const GET = async (request: Request) => {
   const payload = await getPayload({
